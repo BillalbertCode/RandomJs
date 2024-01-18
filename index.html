@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="Breve descripcion de la pagina "/>
+
+    <meta name="Keywords" content= "Palabras, Claves, para la Busqueda, de la Pagina Web"/>
+    <link rel="icon" type="image/svg+xml" href="../src/braces.svg" />
+
+    <title>Ruleta</title>
+
+    <style>
+
+        *{
+
+            padding: 0px;
+
+            margin: 0px;
+
+        }
+
+        body{
+
+            max-width: 1280px;
+
+            margin: auto;
+
+            box-sizing: border-box;
+
+        }
+
+        /* menu inicio  */
+
+            #barraDesplegable {
+
+                display: flex;
+
+                background: #17c8e7;
+
+                }
+
+                #barraDesplegable ul {
+
+                    display: flex;
+
+                    flex-flow:row nowrap;
+
+                    justify-content: space-around ;
+
+                    flex-basis: 100%;
+
+                    list-style-type: none;
+
+                }
+
+                    #barraDesplegable ul li {
+
+                        flex-basis: 25%;
+
+                        font-size: 35px;
+
+                    }
+
+                    #barraDesplegable li:hover{background-color: #176ae7;}
+
+
+
+                        #barraDesplegable ul li > a {
+
+                            display:flex;
+
+                            align-items: center;
+
+                            justify-content: center;
+
+                            text-decoration: none;
+
+                            }
+
+
+
+                            #barraDesplegable ul li a:hover, a:visited, a:link, a:active, a {color: #e4f3ff;}
+
+
+
+                        #subseccion1, #subseccion2{
+
+                            display: none;
+
+                            flex-flow: column nowrap;
+
+                            position:absolute;
+
+                            width: 200px;
+
+                            background: #3fbda1;
+
+                        }
+
+                            #subseccion1 p, #subseccion2 p {height: 30px;}
+
+
+
+                                #subseccion1 p:hover, #subseccion2 p:hover{background: #176ae7 ;}
+
+                                #subseccion1 p >a, #subseccion2 p >a {
+
+                                    display: flex;
+
+                                    align-items: center;
+
+                                    justify-content: center;
+
+                                    width: 100%;
+
+                                    height: 100%;
+
+                                    text-decoration: none;
+
+                                    font-family: Arial;
+
+                                    font-size: 18px;
+
+                                }
+
+        /* menu fin  */
+
+        /* footer inicio */
+
+                    
+
+        #fin {
+
+                display: flex;
+
+                text-align: center;
+
+                flex-flow: column nowrap;
+
+                align-items: center;
+
+                padding: 20px 0px;
+
+                color:#fff;
+
+                background: #1a1a1a;
+
+            }
+		
+                #fin img{
+			border-radius:50% ;
+			width:10em;
+			}      													 
+
+        /* footer fin */
+
+        /* Ruleta inicio */
+
+        #Principal{
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            margin-top: 40px;
+
+        }
+
+        #cajaDeRuleta {
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+        #ruleta {
+
+            display: flex;
+
+            flex-flow: row wrap;       
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 400px;
+
+            width: 400px;
+
+            transition: all 5s ;
+
+        }
+
+            .botoncito{
+
+            display:flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 200px;
+
+            width: 200px;
+
+            outline:none;          
+
+            border : solid 2px #fff;
+
+            color: #ffffff;
+
+            font-family: impact;
+
+            font-size:40px;  
+
+            }
+
+                #uno{
+
+                    border-radius: 200px 0 0 0;
+
+                    background: #32fd32;
+
+                }
+
+                #dos{
+
+                    border-radius:  0 200px 0 0;
+
+                    background: #ff2e2e;
+
+                }
+
+                #tres{
+
+                    border-radius:  0 0  0 200px;
+
+                    background: #ff2e2e;  
+
+                }
+
+                #cuatro{
+
+                    border-radius:  0 0 200px 0 ;
+
+                    background: #32fd32;
+
+                }
+
+                #voton {
+
+                    position: absolute;
+
+                }
+
+                    #btnGirar{
+
+                        padding:10px 60px;
+
+                        font-size:50px;
+
+                        font-family: impact;
+
+                        cursor: pointer;
+
+                        outline: none;
+
+                        border-radius: 50px;
+
+                        border:solid #000;
+
+                        color: #000;
+
+                        background: linear-gradient(131deg, rgba(255,255,255,1) 50%, rgba(227,227,227,1) 73%, rgba(163,163,163,1) 99%);
+
+                    }
+
+                    #btnGirar:active{box-shadow: 0  2px #000000;}
+
+                #botonesDeDialogo{
+
+                    display: none;
+
+                }
+
+                .BOTONESDELDIALOGO{
+
+                    width: 30px;
+
+                    height: 30px;
+
+                    outline:none;
+
+                    border-radius:50%;
+
+                    border:2px solid #000;
+
+                }
+
+                    .BOTONESDELDIALOGO:active{
+
+                        border:none,
+
+                    }
+
+                .volteado{
+
+                    -webkit-transform: rotate(-180deg);
+
+                    transform: rotate(-180deg);
+
+                }   
+
+        /* Ruleta Fin */
+
+        /* Configuracion Inicio */
+
+
+
+            #configuracionAbierta{display:none;}
+
+                #configuracion, #configuracionAbierta{
+
+                    position: absolute ;
+
+                    border:none;
+
+                    outline:none;
+
+                    border-radius:20%;
+
+                    cursor:pointer;
+
+                    margin: 20px;
+
+                    background:#000;
+
+                    
+
+                }
+
+                .imagenDeConfiguracion{
+
+                    width:70px;
+
+                    height:70px;
+
+                    padding:10px;
+
+                    transition:all 420ms;
+
+                    box-sizing: border-box;
+
+
+
+                }
+
+            #textos{
+
+                z-index: 2;
+
+                display:none;
+
+                flex-flow: column wrap;
+
+               
+
+                /* width: 500px; */
+
+                /* height: 410px; */ 
+
+                padding:15px;
+
+                margin-left:20px;
+
+                margin-top: 100px;
+
+                border-radius:5px;
+
+                position:absolute;
+
+                box-sizing: border-box;
+
+                background: radial-gradient(circle, rgb(79, 208, 220) 0%, rgba(25,92,218,1) 100%);
+
+
+
+            }
+
+                .texto{
+
+                    width:100px;
+
+                    height:22px;
+
+                    margin:-10px 0px 10px 10px;
+
+                    padding-left:8px;
+
+                    color: #fff;
+
+                    font-family: arial;
+
+                    font-size: italic;
+
+                    font-size:15px;
+
+                    border-radius:3px;
+
+                    border:none;
+
+                    border-bottom:1px solid #fff;
+
+                    box-sizing: border-box;
+
+                    background: none;
+
+                }
+
+                    :focus.texto{
+
+                        border:none;
+
+                        color:#000;
+
+                        font-style: normal;
+
+                        font-family:verdana;
+
+                        background: #fff;
+
+                    }
+
+                .llamadaAlColor{
+
+                    display:inline-block;
+
+                    width: 22px;
+
+                    height: 22px;
+
+                    outline:none;
+
+                    border-radius:50%;
+
+                    border:2px solid #fff;
+
+                    cursor:pointer;
+
+                    box-sizing: border-box;
+
+                }
+
+                input[type=color]{
+
+                    display: none;
+
+                }
+
+                .titulo{
+
+                    
+
+                    color:#fff;
+
+                    font-family:verdana;
+
+                    font-size:19px;
+
+                    margin-bottom:3px;
+
+                    cursor:default;
+
+                    box-sizing: border-box;
+
+                }
+
+                .line{
+
+                    cursor:default;
+
+                }
+
+                .radio{
+
+                    cursor:pointer;
+
+                }
+
+        /* Configuracion Fin */
+
+        /* flexible inicio */
+
+
+
+        /* menu-flex  Inicio*/
+
+        @media (max-width: 500px){
+
+                    #barraDesplegable ul li {
+
+                        font-size: 20px;
+
+                    }
+
+                }
+
+        /* menu-flex fin */
+
+        @media (max-width: 500px){
+
+            #wrapper{
+
+                display: flex;
+
+                justify-content: center;
+
+            }
+
+        }
+
+        /* RuletaFlex Inicio */
+
+        @media (max-width:500px){
+
+            #ruleta{
+
+                height: 300px;
+
+                width: 300px;
+
+            }
+
+            .botoncito{
+
+                height:150px;
+
+                width: 150px;
+
+            }
+
+            #textos{
+
+                flex-flow: row wrap;
+
+                justify-content: space-around;
+
+                margin-right:20px;
+
+            }
+
+            #textos .titulo{
+
+                font-size: 16px;
+
+                
+
+            }
+
+            #line3,#line2,#line1,#line0{
+
+                width: 100px;
+
+                padding: 0px 4px 10px 0px;
+
+                text-align: center;
+
+            }
+
+           
+
+        }
+
+        /* RuletaFlex Fin */
+
+        /* flexible fin */
+
+    </style>
+
+    <script>
+
+        function ver (n) {
+
+            document.getElementById("subseccion"+n).style.display="block"
+
+        }
+
+        function ocultar (n){
+
+            document.getElementById("subseccion"+n).style.display="none"
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="CONTENEDOR">
+
+        <header id="header">
+
+            <nav id="menu">
+
+                <div id="barraDesplegable">
+
+                    <ul>
+
+                        <li id="seccion">
+
+                            <a href="https://bill.caribito.com/bill/">Inicio</a>
+
+                        </li>
+
+                        <li id="seccion"onmouseover="ver(1)" onmouseout="ocultar(1)">
+
+                            <a hre="#">Proyectos</a>
+
+                            <div id="subseccion1">
+
+                                <p><a href="https://bill.caribito.com/bill/Pagina_Web/">Pagina Web Resposive</a></p>
+
+                                <p><a href="#">Proyecto 3</a></p>
+
+                            </div>
+
+                        </li>
+
+                        <li id="seccion"onmouseover="ver(2)" onmouseout="ocultar(2)">
+
+                            <a href="#">Preguntas</a>
+
+                            <div id="subseccion2">
+
+                                <p><a href="#">Pregunta 1</a></p>
+
+                                <p><a href="#">Pregunta 2</a></p>
+
+                            </div>
+
+                        </li>
+
+                        <li id="subseccion">
+
+                            <a href="https://bill.caribito.com/bill/Contact">Contactar</a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </nav>
+
+        </header>
+
+        <div id="Secundaria">
+
+            <div id="CONFIGURACION">
+
+                <button id="configuracion" onclick="empezarConfiguracion()" ><img  class="imagenDeConfiguracion" id="configuracionImagen0" src="https://bill.caribito.com/bill/Imagenes/ajustes2.png" alt="Configuracion" title="Configuracion"></button>
+
+                <button id="configuracionAbierta" onclick="cerrarConfiguracion()"><img  class="imagenDeConfiguracion" id="configuracionImagen1" src="https://bill.caribito.com/bill/Imagenes/ajustes2.png" alt="Configuracion" title="Configuracion"></button>
+
+            </div>
+
+            <form id="textos">
+
+        
+
+                <div id="line0" class="line">
+
+                    <p class="titulo">Cuadro #1</p>
+
+                    <input type="text" id="textUno" class="texto" placeholder="Cuadro 1" title="Texto del cuadro 1" maxlength="20" > 
+
+                    <label id="llamadaAlColor0" class="llamadaAlColor"title="Elije un color"><input type="color" id="colores1" class="COLOR" value="#32fd32"></label>
+
+                    <input type="radio" name="letra1" class="radio" onclick="letraEnBlanco(uno)"title="Texto en Blanco">
+
+                    <input type="radio" name="letra1" class="radio" onclick="letraEnNegro(uno)"title="Texto en Negro"> 
+
+                    
+
+                </div>
+
+            
+
+                <div id="line1" class="line">
+
+                    <p class="titulo">Cuadro #2</p>
+
+                    <input type="text" id="textDos" class="texto" placeholder="Cuadro 2" title="Texto del cuadro 2" maxlength="20">
+
+                    <label id="llamadaAlColor1" class="llamadaAlColor"title="Elije un color"><input type="color" id="colores2" class="COLOR" value="#ff2e2e" ></label>
+
+                    <input type="radio" name="letra2" class="radio" onclick="letraEnBlanco(dos)"title="Texto en Blanco">
+
+                    <input type="radio" name="letra2" class="radio" onclick="letraEnNegro(dos)"title="Texto en Negro"> 
+
+                    
+
+                </div>
+
+          
+
+        
+
+                <div id="line2" class="line">
+
+                    <p class="titulo">Cuadro #3</p>
+
+                    <input type="text" id="textTres" class="texto" placeholder="Cuadro 3" title="Texto del cuadro 3" maxlength="20"> 
+
+                    <label id="llamadaAlColor2" class="llamadaAlColor"title="Elije un color"><input type="color" id="colores3" class="COLOR" value="#ff2e2e" ></label>
+
+                    <input type="radio" name="letra3" class="radio" onclick="letraEnBlanco(tres)"title="Texto en Blanco">
+
+                    <input type="radio" name="letra3" class="radio" onclick="letraEnNegro(tres)"title="Texto en Negro"> 
+
+                    
+
+                </div>
+
+                
+
+                <div id="line3" class="line">
+
+                    <p class="titulo">Cuadro #4</p>
+
+                    <input type="text" id="textCuatro" class="texto" placeholder="Cuadro 4"title="Texto del cuadro 4" maxlength="20">
+
+                    <label id="llamadaAlColor3" class="llamadaAlColor"title="Elije un color"><input type="color" id="colores4" class="COLOR" value="#32fd32"  ></label>
+
+                    <input type="radio" name="letra4" class="radio" onclick="letraEnBlanco(cuatro)" title="Texto en Blanco">
+
+                    <input type="radio" name="letra4" class="radio" onclick="letraEnNegro(cuatro)" title="Texto en Negro">
+
+                </div>        
+
+            </form>
+
+        </div>
+
+        <div id="Principal">
+
+            <div id="cajaDeRuleta">
+
+                <div id="ruleta">
+
+                    <div class="boton" id="UNO">
+
+                        <button class="botoncito" id="uno" title="Cuadro #1"><p>Si</p></button>
+
+                    </div>
+
+                    <div class="boton" id="DOS">
+
+                        <button class="botoncito" id="dos"  title="Cuadro #2"><p>No</p></button>
+
+                    </div>
+
+                    <div class="boton" id="TRES">
+
+                        <button class="botoncito" id="tres" title="Cuadro #3"><p class="volteado">No</p></button>
+
+                    </div>
+
+                    <div class="boton" id="CUATRO">
+
+                        <button class="botoncito" id="cuatro" title="Cuadro #4"><p class="volteado">Si</p></button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="voton">
+
+                <button id="btnGirar" onclick="empezaruleta()" title="¡Empezar!" >¡Girar!</button>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        
+
+        <div id="botonesDeDialogo">
+
+            <div id="botonDeColor0" class="BOTONES">
+
+                <p id="texto0" >Su Resultado es: </p>
+
+                <button id="dialogoBoton0" class="BOTONESDELDIALOGO"></button>
+
+            </div>
+
+            <div id="botonDeColor1" class="BOTONES">
+
+                <p id="texto1">Su Resultado es: </p>
+
+                <button id="dialogoBoton1" class="BOTONESDELDIALOGO"></button>
+
+            </div>
+
+            <div id="botonDeColor2" class="BOTONES">
+
+                <p id="texto2">Su Resultado es: </p>
+
+                <button id="dialogoBoton2" class="BOTONESDELDIALOGO"></button>
+
+            </div>
+
+            <div id="botonDeColor3" class="BOTONES">
+
+                <p id="texto3">Su Resultado es: </p>
+
+                <button id="dialogoBoton3" class="BOTONESDELDIALOGO"></button>
+
+            </div>
+
+        </div>
+
+        <footer id="footer">
+
+            <div id="fin">
+
+                <p>BillalbertCode - Billalbert Martinez <br><br>
+
+                Contactanos por: BillalbertCode@gmail.com</p>
+
+                <br><br>
+
+                <div id="leblanc-r">
+
+                    <img src="https://lh3.googleusercontent.com/a/ACg8ocLl7spXfU4qFLH7_9cDh0DrmFwgehddlYQX7NzduPfGFA=s260-c-no" title="Contactanos" alt="leblanc-r">
+
+                </div>
+
+            </div>  
+
+        </footer> 
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+
+// constantes y variables
+
+        const textUno = document.getElementById('textUno')
+
+        const textDos = document.getElementById('textDos')
+
+        const textTres = document.getElementById('textTres')
+
+        const textCuatro = document.getElementById('textCuatro')
+
+
+
+        const colorUno = document.getElementById('colores1')
+
+        const colorDos = document.getElementById('colores2')
+
+        const colorTres = document.getElementById('colores3')
+
+        const colorCuatro = document.getElementById('colores4')
+
+
+
+        const uno = document.getElementById('uno')
+
+        const dos = document.getElementById('dos')
+
+        const tres = document.getElementById('tres')
+
+        const cuatro = document.getElementById('cuatro')
+
+
+
+        const llamadaAlColor0 = document.getElementById('llamadaAlColor0')
+
+        const llamadaAlColor1 = document.getElementById('llamadaAlColor1')
+
+        const llamadaAlColor2 = document.getElementById('llamadaAlColor2')
+
+        const llamadaAlColor3 = document.getElementById('llamadaAlColor3')
+
+        
+
+        const dialogoBoton0 = document.getElementById('dialogoBoton0')
+
+        const dialogoBoton1 = document.getElementById('dialogoBoton1')   
+
+        const dialogoBoton2 = document.getElementById('dialogoBoton2')
+
+        const dialogoBoton3 = document.getElementById('dialogoBoton3')
+
+
+
+        const botonDeColor0 = document.getElementById('botonDeColor0')
+
+        const botonDeColor1 = document.getElementById('botonDeColor1')
+
+        const botonDeColor2 = document.getElementById('botonDeColor2')
+
+        const botonDeColor3 = document.getElementById('botonDeColor3')
+
+
+
+        const texto0 = document.getElementById('texto0')
+
+        const texto1 = document.getElementById('texto1')
+
+        const texto2 = document.getElementById('texto2')
+
+        const texto3 = document.getElementById('texto3')
+
+
+
+        const Principal = document.getElementById('Principal')
+
+        
+
+        
+
+        textUno.value = "Si"
+
+        textDos.value = "No"
+
+        textTres.value = "No"
+
+        textCuatro.value = "Si"
+
+
+
+        colorUno.value = "#32fd32"
+
+        colorDos.value = "#ff2e2e"
+
+        colorTres.value = "#ff2e2e"
+
+        colorCuatro.value = "#32fd32"
+
+        // constantes y variables fin
+
+        // ruleta giros y Dialogo
+
+        
+
+            
+
+            function Respuesta(a,d,t){
+
+                let textoDeRespuesta = document.createTextNode(a.value)
+
+
+
+                t.appendChild(textoDeRespuesta)
+
+
+
+                Swal.fire ({
+
+                    title:a.value ,
+
+                    icon:"success",
+
+                    html: d,
+
+                    confirmButtonText:'<p">¡Excelente!</p>',
+
+                    }).then((result) =>  {
+
+                        if(result.isConfirmed){
+
+                            t.removeChild(textoDeRespuesta)
+
+                        }
+
+                    })
+
+            }
+
+        function Giros(){
+
+            let rand = Math.random()*7200
+
+            document.getElementById("ruleta").style.transform = "rotate("+rand+"deg)"
+
+            valor = rand / 360
+
+            valor = (valor - parseInt(valor.toString().split(".")[0])) * 360
+
+            setTimeout (() =>{
+
+                switch(true){
+
+                    case valor > 0 && valor <= 90:
+
+                        Respuesta(textUno,botonDeColor0,texto0,colorUno)
+
+                    break;
+
+                    case valor > 90 && valor <= 180:
+
+                        Respuesta(textTres,botonDeColor2,texto2,colorTres)
+
+                    break;
+
+                    case valor >180 && valor <= 270:
+
+                        Respuesta(textCuatro,botonDeColor3,texto3,colorCuatro)
+
+                    break;
+
+                    case valor > 270 && valor <= 360:
+
+                        Respuesta(textDos,botonDeColor1,texto1,colorDos)
+
+                    break;
+
+                }
+
+            },5000)  
+
+        }
+
+        function ciclo(btnGirar){
+
+            document.getElementById(btnGirar).style.display="none"
+
+            setTimeout(() => {
+
+                document.getElementById(btnGirar).style.display="block"
+
+            }, 5000);
+
+        }
+
+        class Juego {
+
+            constructor() {
+
+                this.Boton()
+
+                this.Girar()
+
+                this.Desparecer()
+
+                this.RESPUESTA()
+
+            }
+
+            Boton() {
+
+                ciclo("btnGirar")
+
+                
+
+            }
+
+            Girar(){
+
+                Giros()
+
+            }
+
+            Desparecer(){
+
+                ciclo("configuracion")
+
+                 
+
+            }
+
+            RESPUESTA(){
+
+                botonDeColor(dialogoBoton0,colorUno)
+
+                botonDeColor(dialogoBoton1,colorDos)
+
+                botonDeColor(dialogoBoton2,colorTres)
+
+                botonDeColor(dialogoBoton3,colorCuatro)
+
+            }
+
+        }
+
+        
+
+        function empezaruleta() {
+
+            var juego = new Juego()
+
+        }
+
+        // ruleta giros y  Dialogo fin
+
+        // config   
+
+        function textoEnTiempoReal(t,b) {
+
+            t.addEventListener("input", function cambioDeTexto(){
+
+               b.innerHTML = t.value;
+
+            })  
+
+        }
+
+        
+
+        function letraEnBlanco(b){
+
+            b.style.color = '#ffffff'
+
+        }
+
+        function letraEnNegro(b){
+
+            b.style.color = '#000000'
+
+        }
+
+        function botonDeColor(b,c){
+
+            b.style.background = c.value
+
+            c.addEventListener("input",actualizar)
+
+            
+
+            function actualizar(){
+
+                b.style.background = event.target.value
+
+            }
+
+        }
+
+        class Configuracion {
+
+            constructor(){
+
+                this.boton()
+
+                this.configuracion()
+
+                this.configurando()
+
+                this.botonColor()
+
+                this.desaparecer()
+
+            }
+
+            boton(){
+
+                document.getElementById("textos").style.display ="flex"
+
+                document.getElementById('configuracion').style.display = "none"
+
+                document.getElementById('configuracionAbierta').style.display ="block"
+
+            }
+
+            configuracion(){
+
+                textoEnTiempoReal(textUno,uno)
+
+                textoEnTiempoReal(textDos,dos)
+
+                textoEnTiempoReal(textTres,tres)
+
+                textoEnTiempoReal(textCuatro,cuatro)
+
+            }
+
+            configurando(){
+
+
+
+                botonDeColor(uno,colorUno)
+
+                botonDeColor(dos,colorDos)
+
+                botonDeColor(tres,colorTres)
+
+                botonDeColor(cuatro,colorCuatro)
+
+                
+
+            }
+
+            botonColor(){
+
+                botonDeColor(llamadaAlColor0,colorUno)
+
+                botonDeColor(llamadaAlColor1,colorDos)
+
+                botonDeColor(llamadaAlColor2,colorTres)
+
+                botonDeColor(llamadaAlColor3,colorCuatro)
+
+            }
+
+            desaparecer(){
+
+                document.getElementById('btnGirar').style.display = "none"
+
+                setTimeout(() => {
+
+                    document.getElementById("configuracionImagen1").style.transform = "rotate(180deg)"
+
+                },100);
+
+                    document.getElementById("configuracionImagen0").style.transform = "rotate(180deg)"
+
+                    Principal.addEventListener("click",cerrarConfiguracion)
+
+            }
+
+        }
+
+        function empezarConfiguracion(){
+
+            var configuraciones = new Configuracion()
+
+        }
+
+        function cerrarConfiguracion(){
+
+            document.getElementById("textos").style.display="none"
+
+            document.getElementById('configuracion').style.display = "block"
+
+            document.getElementById('configuracionAbierta').style.display = "none"
+
+            document.getElementById('btnGirar').style.display = "block"
+
+            document.getElementById("configuracionImagen1").style.transform = "rotate(0deg)"
+
+            setTimeout(() => {
+
+                    document.getElementById("configuracionImagen0").style.transform = "rotate(0deg)"
+
+                },100);
+
+                Principal.removeEventListener("click",cerrarConfiguracion)
+
+            }
+
+    // config fin
+
+    </script>
+
+    
+
+</body>
+
