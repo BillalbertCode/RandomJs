@@ -18,6 +18,6 @@ Ruleta web de 4 opciones personalizables, la cual selecciona aleatoriamente algu
  - Color y texto agregado a las Notificiones.
 ## Acerca De
 Este es un proyecto que retomare de hace algunos años.
-Se trabajar con **React** y mi objetivo principal es crear todas las funciones posibles asociadas a métodos aleatorios de **Javascript** para que todos puedan encontrar un método aleatorio que les convenga en un solo lugar.
+Se trabajara con **React** y mi objetivo principal es crear todas las funciones posibles asociadas a métodos aleatorios de **Javascript** para que todos puedan encontrar un método aleatorio que les convenga en un solo lugar.
 
 *Por ahora solo es una Ruleta como todas las demás..* 
